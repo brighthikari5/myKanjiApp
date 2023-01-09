@@ -6,5 +6,5 @@ import com.example.mykanjiapp.domain.model.KanjiDomainModel
 class KanjiRepository(private val cloudDataSource: KanjiCloudDataSource) {
 
     suspend fun downloadKanjisByGrade(): List<KanjiDomainModel> =
-        cloudDataSource.getKanjis()
+        cloudDataSource.getGradeOneKanjis()
 }

@@ -8,7 +8,28 @@ class KanjiCloudDataSource(
     private val kanjiApi: KanjiApi,
     private val mapper: CharacterMapper
 ) {
-    suspend fun getKanjis(): List<KanjiDomainModel> =
+    suspend fun getGradeOneKanjis(): List<KanjiDomainModel> =
         kanjiApi.getGradeOneKanjis()
             .let { mapper.toDomain(it) }
+
+    suspend fun getGradeTwoKanjis(): List<KanjiDomainModel> =
+        kanjiApi.getGradeTwoKanjis()
+            .let { mapper.toDomain(it) }
+
+    suspend fun getGradeThreeKanjis(): List<KanjiDomainModel> =
+        kanjiApi.getGradeThreeKanjis()
+            .let { mapper.toDomain(it) }
+
+    suspend fun getGradeFourKanjis(): List<KanjiDomainModel> =
+        kanjiApi.getGradeFourKanjis()
+            .let { mapper.toDomain(it) }
+
+    suspend fun getGradeFiveKanjis(): List<KanjiDomainModel> =
+        kanjiApi.getGradeFiveKanjis()
+            .let { mapper.toDomain(it) }
+
+    suspend fun getGradeSixKanjis(): List<KanjiDomainModel> =
+        kanjiApi.getGradeSixKanjis()
+            .let { mapper.toDomain(it) }
+
 }
